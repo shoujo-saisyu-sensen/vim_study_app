@@ -1,10 +1,12 @@
-## Next js template
+## Vim Study App
 
-:construction: まだ未完成
+Vimを学習するためのアプリを作りたい
+
 
 ### scripts
 
 ```sh
+// set up modules
 yarn
 
 // 起動
