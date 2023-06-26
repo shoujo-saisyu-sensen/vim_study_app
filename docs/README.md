@@ -1,4 +1,4 @@
-##　:construction:　 Next js template
+## :construction: Next js template
 
 ### scripts
 
