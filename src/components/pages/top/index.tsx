@@ -1,7 +1,5 @@
 import styles from './style.module.scss';
 
-
-
 export const index: React.FC = () => {
   return (
     <div>
