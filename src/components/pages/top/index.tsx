@@ -1,6 +1,6 @@
 import styles from './style.module.scss';
 
-export const index: React.FC = () => {
+export const Top: React.FC = () => {
   return (
     <div>
       <div className={styles.topWrapper}>

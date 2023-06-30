@@ -1,12 +1,9 @@
 import type { NextPage } from 'next'
+import { Top } from '@/components/pages/top'
 
 const Page: NextPage = () => {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">
-        Hello World
-      </h1>
-    </div>
+    <Top />
   )
 }
 
