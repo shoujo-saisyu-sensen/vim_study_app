@@ -5,6 +5,7 @@ export const Top: React.FC = () => {
     <div>
       <div className={`w-screen h-screen ${style.topWrapper}`}>
       <h1>Hello World</ h1>
+      <input type="text" />
     </ div>
     </div>
   );
