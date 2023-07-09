@@ -2,4 +2,37 @@
   background: #b92b27;
   background: -webkit-linear-gradient(to right, #b92b27, #1565c0);
   background: linear-gradient(to right, #b92b27, #1565c0);
+
+  > .answerInput {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid #d9e7fc;
+    animation: borderUnFocus 0.3s linear forwards;
+  }
+
+  > .answerInput:focus {
+    border-bottom: 2px solid #d9e7fc;
+    animation: borderFocus 0.3s linear forwards;
+  }
+}
+
+@keyframes borderFocus {
+  0% {
+    border-bottom: 2px solid #d9e7fc;
+  }
+
+  100% {
+    border-bottom: 2px solid #1565c0;
+  }
+}
+
+@keyframes borderUnFocus {
+  0% {
+    border-bottom: 2px solid #1565c0;
+  }
+
+  100% {
+    border-bottom: 2px solid #d9e7fc;
+  }
 }
