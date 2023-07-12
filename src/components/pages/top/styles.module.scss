@@ -15,6 +15,10 @@
     border-bottom: 2px solid #d9e7fc;
     animation: borderFocus 0.3s linear forwards;
   }
+
+  > .startButton {
+    color: #ffffff;
+  }
 }
 
 @keyframes borderFocus {
