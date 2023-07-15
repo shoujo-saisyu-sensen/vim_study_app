@@ -11,7 +11,11 @@ export const Top: React.FC = () => {
   return (
     <div>
       <div className={`w-screen h-screen flex flex-col justify-center gap-4 p-40 ${style.topWrapper}`}>
-        {isStarted ? (<input type="text" className={style.answerInput} placeholder='sample'/>) : (<button onClick={onClickStart} className={style.startButton}>おしてね</button>)}
+        {isStarted ? (<input type="text" className={style.answerInput} placeholder='sample'/>) : (
+        <div>
+          <p>START</p>
+          <button onClick={onClickStart} className={style.startButton}>おしてね</button>
+        </div>)}
       </ div>
     </div>
   );
