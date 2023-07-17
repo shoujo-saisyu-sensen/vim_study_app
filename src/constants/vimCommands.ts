@@ -1,4 +1,4 @@
-const VIM_COMMANDS = [
+export const VIM_COMMANDS = [
   {
     command: "insert",
     correctAnswer: "i",
