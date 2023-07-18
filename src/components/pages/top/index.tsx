@@ -14,7 +14,7 @@ export const Top: React.FC = () => {
         {isStarted ? (<input type="text" className={style.answerInput} placeholder='sample'/>) : (
         <div>
           <p>START</p>
-          <button onClick={onClickStart} className={style.startButton}>おしてね</button>
+          <button onClick={onClickStart} className={style.start}>おしてね</button>
         </div>)}
       </ div>
     </div>
