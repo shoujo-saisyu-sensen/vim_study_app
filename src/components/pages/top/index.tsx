@@ -12,7 +12,7 @@ export const Top: React.FC = () => {
     <div>
       <div className={`w-screen h-screen flex flex-col justify-center gap-4 p-40 ${style.topWrapper}`}>
         {isStarted ? (<input type="text" className={style.answerInput} placeholder='sample'/>) : (
-        <div className={style.start}>
+        <div className={`flex flex-col justify-center ${style.start}`}>
           <p>START</p>
           <button onClick={onClickStart} className={style.button}>おしてね</button>
         </div>)}
