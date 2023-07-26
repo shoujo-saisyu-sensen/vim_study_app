@@ -1,6 +1,13 @@
 @use '../../../styles/variables.scss' as *;
 
 .topWrapper { 
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 40px;
   background: #b92b27;
   background: -webkit-linear-gradient(to right, #b92b27, #1565c0);
   background: linear-gradient(to right, #b92b27, #1565c0);
