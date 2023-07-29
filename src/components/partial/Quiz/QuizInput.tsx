@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import style from './styles.module.scss';
 
 export const Top: React.FC = () => {
