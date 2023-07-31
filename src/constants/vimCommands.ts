@@ -1,7 +1,7 @@
 export const VIM_COMMANDS = [
   {
-    command: "insert",
+    question: "文字入力にするためには？",
     correctAnswer: "i",
-    questions: ["a", "i", "u", "e", "o"],
+    selection: ["a", "i", "u", "e"],
   },
 ];
