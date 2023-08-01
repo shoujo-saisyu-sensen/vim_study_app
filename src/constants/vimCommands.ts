@@ -5,7 +5,7 @@ export const VIM_COMMANDS: Array<{
 }> = [
   {
     question: "文字入力にするためには？",
-    correctAnswer: "i",
+    answer: "i",
     selection: ["a", "i", "u", "e"],
   },
 ];
