@@ -18,6 +18,7 @@ export const useMode = () => {
       case "answer":
         setMode("question");
         return;
+      // ケースとしては起こり得ない
       default:
         return;
     }
