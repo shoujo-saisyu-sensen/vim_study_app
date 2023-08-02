@@ -1,9 +1,22 @@
 import style from './styles.module.scss';
 import { useMode } from '@/hooks/useMode';
 import { VIM_COMMANDS } from '@/constants/vimCommands';
+import { useState } from 'react';
 
 export const Top: React.FC = () => {
   const { mode, changeMode } = useMode();
+
+  const [selectedAnswer, setSelectedAnswer] = useState<string>();
+
+  const handleClickSelection = (value: string) => {
+    setSelectedAnswer(value);
+    changeMode();
+  }
+
+  const handleClickNext = () => {
+    setSelectedAnswer(undefined);
+    changeMode();
+  }
 
   return (
     <div className={style.inputWrapper}>
@@ -14,7 +27,7 @@ export const Top: React.FC = () => {
             {selection.map((value) => {
               return (
                 <div>
-                  <p>{value}</p>
+                  <button onClick={() => handleClickSelection(value)}>{value}</button>
                 </div>
               )
             })}
