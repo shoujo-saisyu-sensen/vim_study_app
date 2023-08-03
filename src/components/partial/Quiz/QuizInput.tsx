@@ -23,6 +23,7 @@ export const Top: React.FC = () => {
       {VIM_COMMANDS.map(({ question, answer, selection }) => {
         return (
           <div>
+            {mode === 'answer' ? (<input type="text" className={style.input} placeholder='sample'/>) : (<div>
             <p>{question}</p>
             {selection.map((value) => {
               return (
@@ -31,10 +32,10 @@ export const Top: React.FC = () => {
                 </div>
               )
             })}
+          </div>)}
           </div>
         )
       })}
-      {mode === 'answer' ? (<input type="text" className={style.input} placeholder='sample'/>) : (<div></div>)}
     </div>
   );
 };
