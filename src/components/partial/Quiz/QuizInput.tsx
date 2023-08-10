@@ -3,7 +3,7 @@ import { useMode } from '@/hooks/useMode';
 import { VIM_COMMANDS } from '@/constants/vimCommands';
 import { useState } from 'react';
 
-export const Top: React.FC = () => {
+export const QuizInput: React.FC = () => {
   const { mode, changeMode } = useMode();
 
   const [selectedAnswer, setSelectedAnswer] = useState<string>();
@@ -23,7 +23,9 @@ export const Top: React.FC = () => {
       {VIM_COMMANDS.map(({ question, answer, selection }) => {
         return (
           <div>
-            {mode === 'answer' ? (<p>{answer}</p>) : (<div>
+            {mode === 'answer' ? (<div>
+              <p>{answer}</p>
+            </div>) : (<div>
             <p>{question}</p>
             {selection.map((value) => {
               return (
