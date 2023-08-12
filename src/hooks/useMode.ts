@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-type Mode = "question" | "answer";
+type Mode = "question" | "answer" | "complete";
 
 export const useMode = () => {
   const [mode, setMode] = useState<Mode>("question");

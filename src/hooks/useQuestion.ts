@@ -5,7 +5,7 @@ export const useQuestion = () => {
   const [questionIndex, setQuestionIndex] = useState<number>(0);
 
   const getNextCurrentQuestion = () => {
-    const targetQuestion = VIM_COMMANDS[questionIndex];
+    const targetQuestion = VIM_QUESTIONS[questionIndex];
     setQuestionIndex(questionIndex + 1);
     return targetQuestion;
   };
