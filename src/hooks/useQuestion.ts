@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { VIM_COMMANDS } from "@/constants/vimCommands";
+import { VIM_QUESTIONS } from "@/constants/vimCommands";
 
 export const useQuestion = () => {
   const [questionIndex, setQuestionIndex] = useState<number>(0);

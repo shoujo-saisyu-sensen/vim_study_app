@@ -1,12 +1,15 @@
 import style from './styles.module.scss';
 import { useMode } from '@/hooks/useMode';
-import { VIM_COMMANDS } from '@/constants/vimCommands';
+import { VIM_QUESTIONS } from '@/constants/vimCommands';
 import { useState } from 'react';
+import { useQuestion } from '@/hooks/useQuestion';
 
 export const QuizInput: React.FC = () => {
   const { mode, changeMode } = useMode();
-
+  const { getNextCurrentQuestion } = useQuestion();
   const [selectedAnswer, setSelectedAnswer] = useState<string>();
+const [currentQuestion, setCurrentQuestion] = useState<>();
+
 
   const handleClickSelection = (value: string) => {
     setSelectedAnswer(value);
@@ -20,24 +23,20 @@ export const QuizInput: React.FC = () => {
 
   return (
     <div className={style.inputWrapper}>
-      {VIM_COMMANDS.map(({ question, answer, selection }) => {
-        return (
-          <div>
-            {mode === 'answer' ? (<div>
-              <p>{answer}</p>
-            </div>) : (<div>
-            <p>{question}</p>
-            {selection.map((value) => {
-              return (
-                <div>
-                  <button onClick={() => handleClickSelection(value)}>{value}</button>
-                </div>
-              )
-            })}
-          </div>)}
-          </div>
-        )
-      })}
+      <div>
+        {mode === 'answer' ? (<div>
+          <p>{answer}</p>
+        </div>) : (<div>
+        <p>{question}</p>
+        {selection.map((value) => {
+          return (
+            <div>
+              <button onClick={() => handleClickSelection(value)}>{value}</button>
+            </div>
+          )
+        })}
+      </div>)}
+      </div>
     </div>
   );
 };

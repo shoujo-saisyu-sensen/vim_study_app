@@ -1,9 +1,11 @@
-export const VIM_COMMANDS: Array<{
+export type Question = {
   question: string;
   explanation: string;
   answer: string;
   selection: Array<string>;
-}> = [
+};
+
+export const VIM_QUESTIONS: Array<Question> = [
   {
     question: "文字入力にするためには？",
     explanation: "test",
