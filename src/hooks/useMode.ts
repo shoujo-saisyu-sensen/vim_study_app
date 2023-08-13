@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-type Mode = "question" | "answer" | "complete";
+type Mode = "top" | "question" | "answer" | "complete";
 
 export const useMode = () => {
-  const [mode, setMode] = useState<Mode>("question");
+  const [mode, setMode] = useState<Mode>("top");
 
   const changeMode = (nextMode?: Mode) => {
     if (nextMode) {
