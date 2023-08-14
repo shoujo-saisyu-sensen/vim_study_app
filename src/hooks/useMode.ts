@@ -1,31 +1,21 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 type Mode = "top" | "question" | "answer" | "complete";
 
-export const useMode = () => {
+export type UseModeMethods = {
+  mode: Mode;
+  setMode: (mode: Mode) => void;
+};
+
+export const useMode = (): UseModeMethods => {
   const [mode, setMode] = useState<Mode>("top");
 
-  const changeMode = (nextMode?: Mode) => {
-    if (nextMode) {
-      setMode(mode);
-      return;
-    }
-
-    switch (mode) {
-      case "question":
-        setMode("answer");
-        return;
-      case "answer":
-        setMode("question");
-        return;
-      // ケースとしては起こり得ない
-      default:
-        return;
-    }
-  };
+  const _setMode = useCallback((nextMode: Mode) => {
+    setMode(nextMode);
+  }, []);
 
   return {
     mode,
-    changeMode,
+    setMode: _setMode,
   };
 };
