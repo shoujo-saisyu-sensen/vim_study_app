@@ -1,11 +1,11 @@
 import style from './styles.module.scss';
-import { useMode } from '@/hooks/useMode';
 import { Question } from '@/constants/vimCommands';
 import { useState } from 'react';
 import { useQuestion } from '@/hooks/useQuestion';
+import { useModeContext } from "@/context/useModeContext";
 
 export const QuizInput: React.FC = () => {
-  const { mode, changeMode } = useMode();
+  const { mode, setMode } = useModeContext();
   const { getNextCurrentQuestion } = useQuestion();
   const [selectedAnswer, setSelectedAnswer] = useState<string>();
   const [currentQuestion, setCurrentQuestion] = useState<Question>(getNextCurrentQuestion());
@@ -13,12 +13,12 @@ export const QuizInput: React.FC = () => {
 
   const handleClickSelection = (value: string) => {
     setSelectedAnswer(value);
-    changeMode();
+    setMode("answer");
   }
 
   const handleClickNext = () => {
     setSelectedAnswer(undefined);
-    changeMode();
+    setMode("question");
   }
 
   const getQuestionsArea = () => {
