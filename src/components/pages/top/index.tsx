@@ -1,20 +1,21 @@
-import { useState } from 'react';
 import style from './styles.module.scss';
+import { useModeContext } from "@/context/useModeContext";
+import { QuizInput } from '@/components/partial/Quiz/QuizInput';
 
 export const Top: React.FC = () => {
-  const [isStarted, setIsStarted] = useState<boolean>(false);
+  const { mode, setMode } = useModeContext();
 
-  const onClickStart = () => {
-    setIsStarted(true);
+  const handleClickStart = () => {
+    setMode('question');
   }
 
   return (
     <div>
       <div className={style.topWrapper}>
-        {isStarted ? (<input type="text" className={style.answerInput} placeholder='sample'/>) : (
+        {mode === 'top' ? (
         <div className={style.start}>
-          <button onClick={onClickStart} className={style.button}>始める</button>
-        </div>)}
+          <button onClick={handleClickStart} className={style.button}>始める</button>
+        </div>) : (<QuizInput />)}
       </ div>
     </div>
   );

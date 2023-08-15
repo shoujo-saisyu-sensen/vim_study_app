@@ -1,16 +1,16 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { VIM_QUESTIONS } from "@/constants/vimCommands";
 
 export const useQuestion = () => {
   const [questionIndex, setQuestionIndex] = useState<number>(0);
 
-  const getNextCurrentQuestion = () => {
+  const currentQuestion = useMemo(() => {
     const targetQuestion = VIM_QUESTIONS[questionIndex];
     setQuestionIndex(questionIndex + 1);
     return targetQuestion;
-  };
+  }, [questionIndex]);
 
   return {
-    getNextCurrentQuestion,
+    currentQuestion,
   };
 };
