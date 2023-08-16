@@ -8,19 +8,27 @@ export const QuizInput: React.FC = () => {
   const { mode, setMode } = useModeContext()
   const [selectedAnswer, setSelectedAnswer] = useState<string>()
   const [questionIndex, setQuestionIndex] = useState<number>(0)
+  const [correctCount, setCorrectCount] = useState<number>(0)
 
   const currentQuestion = useMemo(() => {
     return QUESTIONS[questionIndex]
-  }, [])
+  }, [questionIndex])
 
   const handleClickSelection = (value: string) => {
     setSelectedAnswer(value)
+
+    // 正解の場合
+    if (value === currentQuestion.answer) {
+      setCorrectCount(correctCount + 1)
+    }
+
     setMode('answer')
   }
 
   const handleClickNext = () => {
     setSelectedAnswer(undefined)
 
+    // 最終問題の時
     if (questionIndex === QUESTIONS.length - 1) {
       setMode('complete')
       return
@@ -35,7 +43,10 @@ export const QuizInput: React.FC = () => {
       case 'answer':
         return (
           <div>
-            <p></p>
+            <p>{currentQuestion.answer}</p>
+            <br />
+            <p>{currentQuestion.explanation}</p>
+            <button onClick={() => handleClickNext()}>Next</button>
           </div>
         )
       case 'question':
