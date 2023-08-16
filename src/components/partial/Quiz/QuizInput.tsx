@@ -14,6 +14,10 @@ export const QuizInput: React.FC = () => {
     return QUESTIONS[questionIndex]
   }, [questionIndex])
 
+  /**
+   * 回答を選択する
+   * @param value 選択肢
+   */
   const handleClickSelection = (value: string) => {
     setSelectedAnswer(value)
 
@@ -25,6 +29,10 @@ export const QuizInput: React.FC = () => {
     setMode('answer')
   }
 
+  /**
+   * 次へを押下
+   * @returns
+   */
   const handleClickNext = () => {
     setSelectedAnswer(undefined)
 
@@ -44,23 +52,25 @@ export const QuizInput: React.FC = () => {
         return (
           <div>
             <p>{currentQuestion.answer}</p>
-            <br />
             <p>{currentQuestion.explanation}</p>
             <button onClick={() => handleClickNext()}>Next</button>
           </div>
         )
       case 'question':
         return (
-          <div>
+          <div className={style.questionWrapper}>
             <p>{currentQuestion.question}</p>
-            {currentQuestion.selection.map((answerValue) => (
-              <button
-                key={answerValue}
-                onClick={() => handleClickSelection(answerValue)}
-              >
-                {answerValue}
-              </button>
-            ))}
+            <div className={style.buttons}>
+              {currentQuestion.selection.map((answerValue) => (
+                <button
+                  key={answerValue}
+                  className={style.button}
+                  onClick={() => handleClickSelection(answerValue)}
+                >
+                  {answerValue}
+                </button>
+              ))}
+            </div>
           </div>
         )
       case 'complete':
@@ -71,9 +81,5 @@ export const QuizInput: React.FC = () => {
     }
   }
 
-  return (
-    <div className={style.inputWrapper}>
-      <div>{getQuestionsArea()}</div>
-    </div>
-  )
+  return <>{getQuestionsArea()}</>
 }
