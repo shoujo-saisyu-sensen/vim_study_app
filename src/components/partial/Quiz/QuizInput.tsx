@@ -46,14 +46,26 @@ export const QuizInput: React.FC = () => {
     setMode('question')
   }
 
+  const handleClickBackToTop = () => {
+    // 現在の質問の番号と正解数をリセット
+    setQuestionIndex(0)
+    setCorrectCount(0)
+    setMode('top')
+  }
+
   const getQuestionsArea = () => {
     switch (mode) {
       case 'answer':
         return (
-          <div>
-            <p>{currentQuestion.answer}</p>
+          <div className={style.answerWrapper}>
+            <p>
+              {selectedAnswer === currentQuestion.answer ? '正解！' : '間違え'}
+            </p>
+            <p>{`答え：${currentQuestion.answer}`}</p>
             <p>{currentQuestion.explanation}</p>
-            <button onClick={() => handleClickNext()}>Next</button>
+            <button className={style.button} onClick={() => handleClickNext()}>
+              Next
+            </button>
           </div>
         )
       case 'question':
@@ -74,7 +86,18 @@ export const QuizInput: React.FC = () => {
           </div>
         )
       case 'complete':
-        return <div>終わりー</div>
+        return (
+          <div className={style.completeWrapper}>
+            <p>終了！</p>
+            <p>{`スコア：${QUESTIONS.length}問中${correctCount}正解!`}</p>
+            <button
+              className={style.button}
+              onClick={() => handleClickBackToTop()}
+            >
+              トップに戻る
+            </button>
+          </div>
+        )
       // ケースとしては起こり得ない、何も返さない
       default:
         return

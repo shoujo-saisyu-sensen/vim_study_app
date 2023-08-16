@@ -1,15 +1,44 @@
 @use '@/styles/variables.scss' as *;
+@use '@/styles/mixins.scss' as *;
 
 .questionWrapper {
   display: flex;
   flex-direction: column;
   color: white;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
 
   > .buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
+  }
+
+  > .buttons > .button {
+    @include button
+  }
+}
+
+.answerWrapper {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  gap: 8px;
+
+  > .button {
+    @include button
+  }
+}
+
+.completeWrapper {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  gap: 8px;
+
+  > .button {
+    @include button
   }
 }
