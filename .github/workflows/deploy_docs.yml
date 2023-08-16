@@ -20,5 +20,6 @@ jobs:
         with:
           folder: docs
           target-folder: docs
+          # docs以外のファイルを削除しない
           clean-exclude: |
             !/docs/

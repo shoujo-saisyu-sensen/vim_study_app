@@ -38,4 +38,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         folder: out
+        # docsを削除しない
         clean-exclude: /docs/
