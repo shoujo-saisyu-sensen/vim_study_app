@@ -5,11 +5,17 @@ export type Question = {
   selection: Array<string>;
 };
 
-export const VIM_QUESTIONS: Array<Question> = [
+export const QUESTIONS: Array<Question> = [
   {
     question: "文字入力にするためには？",
-    explanation: "test",
+    explanation: "インサートモードのiが正解です",
     answer: "i",
     selection: ["a", "i", "u", "e"],
+  },
+  {
+    question: "ノーマルモードにするためには？",
+    explanation: "escが正解です",
+    answer: "esc",
+    selection: ["esc", "delete", "shift", "control"],
   },
 ];
