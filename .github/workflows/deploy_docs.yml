@@ -1,21 +1,21 @@
-name: Deploy Docs
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - docs/**/*
-  workflow_dispatch:
+# name: Deploy Docs
+# on:
+#   push:
+#     branches:
+#       - main
+#     paths:
+#       - docs/**/*
+#   workflow_dispatch:
 
-jobs:
-  buildHtmlFile:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v3
+# jobs:
+#   buildHtmlFile:
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: write
+#     steps:
+#       - uses: actions/checkout@v3
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: docs
+#       - name: Deploy
+#         uses: JamesIves/github-pages-deploy-action@v4
+#         with:
+#           folder: docs
