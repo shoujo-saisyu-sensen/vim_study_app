@@ -1,10 +1,4 @@
 ## Vim Study App
 
-Vim を学習するためのアプリを作りたい
-
-## 構成を考える
-
-4 択クイズみたいなのが楽そう
-開始ボタンと内容ボタン
-開設ボタンとかは必要か
-状態の管理
+[サイト](https://shoujo-saisyu-sensen.github.io/vim_study_app)  
+[ドキュメント](https://shoujo-saisyu-sensen.github.io/vim_study_app/docs)
