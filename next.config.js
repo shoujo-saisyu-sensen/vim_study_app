@@ -2,8 +2,8 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  basePath: process.env.GITHUB_ACTIONS && '/repository_name',
-  assetPrefix: process.env.GITHUB_PAGES && '/repository-name',
+  basePath: process.env.GITHUB_ACTIONS && '/vim_study_app',
+  assetPrefix: process.env.GITHUB_PAGES && '/vim_study_app',
   trailingSlash: true,
 }
 
