@@ -35,7 +35,7 @@ jobs:
       run: touch ./out/.nojekyll
 
     - name: deploy
-      uses: peaceiris/actions-gh-pages@v3
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
         folder: out
         # docsを削除しない
