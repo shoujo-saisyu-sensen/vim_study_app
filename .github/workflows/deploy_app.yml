@@ -11,8 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
-    - uses: actions/checkout@v2
+    - name: checkout
+      uses: actions/checkout@v2
 
     - name: setup node
       uses: actions/setup-node@v1
@@ -22,18 +24,14 @@ jobs:
     # package.jsonに基づき依存パッケージをインストールする
     # それほど遅くないのでキャッシュはしない
     - name: install
-      run: yarn install --frozen-lockfile
+      run: yarn --frozen-lockfile
 
     # Next.jsアプリをビルド、export
     - name: Pre Deploy
       run: yarn pre-deploy
 
-    # Jekyllをさせないように空ファイルを生成
-    - name: add nojekyll
-      run: touch ./out/.nojekyll
-
     - name: deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./out
+        publish_dir: out
