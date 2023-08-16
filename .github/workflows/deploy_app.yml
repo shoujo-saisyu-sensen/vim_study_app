@@ -1,0 +1,37 @@
+name: Deploy App
+
+on:
+  push:
+    branches:
+    - master
+  workflow_dispatch:
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '18.x'
+
+    # package.jsonに基づき依存パッケージをインストールする
+    # それほど遅くないのでキャッシュはしない
+    - name: install
+      run: yarn install --frozen-lockfile
+
+    # Next.jsアプリをビルド、export
+    - name: Pre Deploy
+      run: yarn pre-deploy
+
+    # Jekyllをさせないように空ファイルを生成
+    - name: add nojekyll
+      run: touch ./out/.nojekyll
+
+    - name: deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./out
