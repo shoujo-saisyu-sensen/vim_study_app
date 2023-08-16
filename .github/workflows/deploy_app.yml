@@ -26,10 +26,11 @@ jobs:
     - name: install
       run: yarn --frozen-lockfile
 
-    # Next.jsアプリをビルド、export
-    - name: Pre Deploy
-      run: yarn pre-deploy
+    # Next.jsアプリをビルド
+    - name: build
+      run: yarn build
 
+    # nojekyllを追加、リソースを読み込めるように
     - name: add nojekyll
       run: touch ./out/.nojekyll
 
