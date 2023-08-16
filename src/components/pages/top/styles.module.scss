@@ -12,24 +12,6 @@
   background: -webkit-linear-gradient(to right, #b92b27, #1565c0);
   background: linear-gradient(to right, #b92b27, #1565c0);
 
-  > .answerInput {
-    border: none;
-    outline: none;
-    background-color: transparent;
-    border-bottom: 2px solid #d9e7fc;
-    animation: borderUnFocus 0.3s linear forwards;
-    color: $white;
-  }
-
-  > .answerInput:focus {
-    border-bottom: 2px solid #d9e7fc;
-    animation: borderFocus 0.3s linear forwards;
-  }
-
-  > .answerInput::placeholder {
-    color: $gray;
-  }
-
   > .start {
     display: flex;
     flex-direction: column;

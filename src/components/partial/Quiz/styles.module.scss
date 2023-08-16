@@ -1,41 +1,15 @@
-@use '../../../styles/variables.scss' as *;
+@use '@/styles/variables.scss' as *;
 
-.inputWrapper { 
-  > .input {
-    border: none;
-    outline: none;
-    background-color: transparent;
-    border-bottom: 2px solid #d9e7fc;
-    animation: borderUnFocus 0.3s linear forwards;
-    color: $white;
-  }
+.questionWrapper {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  gap: 16px;
 
-  > .answerInput:focus {
-    border-bottom: 2px solid #d9e7fc;
-    animation: borderFocus 0.3s linear forwards;
-  }
-
-  > .answerInput::placeholder {
-    color: $gray;
-  }
-}
-
-@keyframes borderFocus {
-  0% {
-    border-bottom: 2px solid #d9e7fc;
-  }
-
-  100% {
-    border-bottom: 2px solid #1565c0;
-  }
-}
-
-@keyframes borderUnFocus {
-  0% {
-    border-bottom: 2px solid #1565c0;
-  }
-
-  100% {
-    border-bottom: 2px solid #d9e7fc;
+  > .buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
   }
 }
