@@ -14,6 +14,7 @@ export const Top: React.FC = () => {
       <div className={style.topWrapper}>
         {mode === 'top' ? (
           <div className={style.start}>
+            <p>vimを学習しよう！</p>
             <button onClick={handleClickStart} className={style.button}>
               始める
             </button>
