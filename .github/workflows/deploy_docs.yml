@@ -20,3 +20,5 @@ jobs:
         with:
           folder: docs
           target-folder: docs
+          clean-exclude: |
+            !/docs/
